@@ -1,0 +1,253 @@
+date,industry,sales_amount
+2022-01,Clothing & Accessories,86608.0
+2022-01,Electronics & Appliances,56667.0
+2022-01,Food & Beverage Stores,365771.0
+2022-01,General Merchandise,385352.0
+2022-01,Motor Vehicles & Parts,668628.0
+2022-01,Nonstore Retail (E-commerce),373911.0
+2022-01,Other Specialty Retail,443672.0
+2022-02,Clothing & Accessories,91876.0
+2022-02,Electronics & Appliances,56669.0
+2022-02,Food & Beverage Stores,348972.0
+2022-02,General Merchandise,382757.0
+2022-02,Motor Vehicles & Parts,680132.0
+2022-02,Nonstore Retail (E-commerce),361380.0
+2022-02,Other Specialty Retail,441021.0
+2022-03,Clothing & Accessories,107828.0
+2022-03,Electronics & Appliances,63842.0
+2022-03,Food & Beverage Stores,370262.0
+2022-03,General Merchandise,406150.0
+2022-03,Motor Vehicles & Parts,757922.0
+2022-03,Nonstore Retail (E-commerce),383124.0
+2022-03,Other Specialty Retail,501445.0
+2022-04,Clothing & Accessories,107969.0
+2022-04,Electronics & Appliances,62878.0
+2022-04,Food & Beverage Stores,370857.0
+2022-04,General Merchandise,419736.0
+2022-04,Motor Vehicles & Parts,751832.0
+2022-04,Nonstore Retail (E-commerce),379360.0
+2022-04,Other Specialty Retail,503120.0
+2022-05,Clothing & Accessories,109200.0
+2022-05,Electronics & Appliances,61799.0
+2022-05,Food & Beverage Stores,382173.0
+2022-05,General Merchandise,431892.0
+2022-05,Motor Vehicles & Parts,721888.0
+2022-05,Nonstore Retail (E-commerce),388077.0
+2022-05,Other Specialty Retail,522800.0
+2022-06,Clothing & Accessories,105493.0
+2022-06,Electronics & Appliances,60759.0
+2022-06,Food & Beverage Stores,382188.0
+2022-06,General Merchandise,431395.0
+2022-06,Motor Vehicles & Parts,725156.0
+2022-06,Nonstore Retail (E-commerce),379802.0
+2022-06,Other Specialty Retail,525513.0
+2022-07,Clothing & Accessories,105196.0
+2022-07,Electronics & Appliances,60979.0
+2022-07,Food & Beverage Stores,386487.0
+2022-07,General Merchandise,429001.0
+2022-07,Motor Vehicles & Parts,702042.0
+2022-07,Nonstore Retail (E-commerce),383002.0
+2022-07,Other Specialty Retail,511343.0
+2022-08,Clothing & Accessories,108382.0
+2022-08,Electronics & Appliances,62773.0
+2022-08,Food & Beverage Stores,383472.0
+2022-08,General Merchandise,433708.0
+2022-08,Motor Vehicles & Parts,741408.0
+2022-08,Nonstore Retail (E-commerce),392725.0
+2022-08,Other Specialty Retail,510695.0
+2022-09,Clothing & Accessories,103013.0
+2022-09,Electronics & Appliances,61455.0
+2022-09,Food & Beverage Stores,379364.0
+2022-09,General Merchandise,423697.0
+2022-09,Motor Vehicles & Parts,701826.0
+2022-09,Nonstore Retail (E-commerce),383929.0
+2022-09,Other Specialty Retail,492394.0
+2022-10,Clothing & Accessories,106282.0
+2022-10,Electronics & Appliances,60735.0
+2022-10,Food & Beverage Stores,388474.0
+2022-10,General Merchandise,437146.0
+2022-10,Motor Vehicles & Parts,714012.0
+2022-10,Nonstore Retail (E-commerce),395196.0
+2022-10,Other Specialty Retail,500265.0
+2022-11,Clothing & Accessories,114884.0
+2022-11,Electronics & Appliances,62907.0
+2022-11,Food & Beverage Stores,391596.0
+2022-11,General Merchandise,447792.0
+2022-11,Motor Vehicles & Parts,676500.0
+2022-11,Nonstore Retail (E-commerce),420650.0
+2022-11,Other Specialty Retail,485655.0
+2022-12,Clothing & Accessories,136284.0
+2022-12,Electronics & Appliances,66204.0
+2022-12,Food & Beverage Stores,406847.0
+2022-12,General Merchandise,486821.0
+2022-12,Motor Vehicles & Parts,691392.0
+2022-12,Nonstore Retail (E-commerce),444509.0
+2022-12,Other Specialty Retail,486968.0
+2023-01,Clothing & Accessories,93689.0
+2023-01,Electronics & Appliances,61713.0
+2023-01,Food & Beverage Stores,381949.0
+2023-01,General Merchandise,416092.0
+2023-01,Motor Vehicles & Parts,696554.0
+2023-01,Nonstore Retail (E-commerce),404448.0
+2023-01,Other Specialty Retail,463782.0
+2023-02,Clothing & Accessories,96235.0
+2023-02,Electronics & Appliances,58020.0
+2023-02,Food & Beverage Stores,369280.0
+2023-02,General Merchandise,410324.0
+2023-02,Motor Vehicles & Parts,689510.0
+2023-02,Nonstore Retail (E-commerce),391920.0
+2023-02,Other Specialty Retail,449984.0
+2023-03,Clothing & Accessories,106105.0
+2023-03,Electronics & Appliances,61092.0
+2023-03,Food & Beverage Stores,386979.0
+2023-03,General Merchandise,418967.0
+2023-03,Motor Vehicles & Parts,767612.0
+2023-03,Nonstore Retail (E-commerce),414423.0
+2023-03,Other Specialty Retail,483293.0
+2023-04,Clothing & Accessories,105463.0
+2023-04,Electronics & Appliances,57057.0
+2023-04,Food & Beverage Stores,382870.0
+2023-04,General Merchandise,430560.0
+2023-04,Motor Vehicles & Parts,740484.0
+2023-04,Nonstore Retail (E-commerce),410004.0
+2023-04,Other Specialty Retail,478058.0
+2023-05,Clothing & Accessories,108508.0
+2023-05,Electronics & Appliances,59311.0
+2023-05,Food & Beverage Stores,393476.0
+2023-05,General Merchandise,438814.0
+2023-05,Motor Vehicles & Parts,777106.0
+2023-05,Nonstore Retail (E-commerce),427559.0
+2023-05,Other Specialty Retail,503757.0
+2023-06,Clothing & Accessories,105408.0
+2023-06,Electronics & Appliances,59585.0
+2023-06,Food & Beverage Stores,386529.0
+2023-06,General Merchandise,436316.0
+2023-06,Motor Vehicles & Parts,770784.0
+2023-06,Nonstore Retail (E-commerce),418106.0
+2023-06,Other Specialty Retail,493668.0
+2023-07,Clothing & Accessories,108235.0
+2023-07,Electronics & Appliances,58252.0
+2023-07,Food & Beverage Stores,392380.0
+2023-07,General Merchandise,438118.0
+2023-07,Motor Vehicles & Parts,752512.0
+2023-07,Nonstore Retail (E-commerce),428386.0
+2023-07,Other Specialty Retail,481176.0
+2023-08,Clothing & Accessories,112838.0
+2023-08,Electronics & Appliances,60669.0
+2023-08,Food & Beverage Stores,392918.0
+2023-08,General Merchandise,444637.0
+2023-08,Motor Vehicles & Parts,779682.0
+2023-08,Nonstore Retail (E-commerce),432038.0
+2023-08,Other Specialty Retail,500881.0
+2023-09,Clothing & Accessories,104591.0
+2023-09,Electronics & Appliances,59564.0
+2023-09,Food & Beverage Stores,386538.0
+2023-09,General Merchandise,430519.0
+2023-09,Motor Vehicles & Parts,751960.0
+2023-09,Nonstore Retail (E-commerce),421263.0
+2023-09,Other Specialty Retail,486367.0
+2023-10,Clothing & Accessories,105773.0
+2023-10,Electronics & Appliances,58749.0
+2023-10,Food & Beverage Stores,388939.0
+2023-10,General Merchandise,439076.0
+2023-10,Motor Vehicles & Parts,733286.0
+2023-10,Nonstore Retail (E-commerce),441031.0
+2023-10,Other Specialty Retail,496163.0
+2023-11,Clothing & Accessories,116717.0
+2023-11,Electronics & Appliances,63615.0
+2023-11,Food & Beverage Stores,394411.0
+2023-11,General Merchandise,451293.0
+2023-11,Motor Vehicles & Parts,715522.0
+2023-11,Nonstore Retail (E-commerce),472460.0
+2023-11,Other Specialty Retail,482176.0
+2023-12,Clothing & Accessories,141217.0
+2023-12,Electronics & Appliances,65899.0
+2023-12,Food & Beverage Stores,408271.0
+2023-12,General Merchandise,496867.0
+2023-12,Motor Vehicles & Parts,742278.0
+2023-12,Nonstore Retail (E-commerce),494927.0
+2023-12,Other Specialty Retail,482269.0
+2024-01,Clothing & Accessories,93174.0
+2024-01,Electronics & Appliances,57838.0
+2024-01,Food & Beverage Stores,385689.0
+2024-01,General Merchandise,416695.0
+2024-01,Motor Vehicles & Parts,692002.0
+2024-01,Nonstore Retail (E-commerce),437102.0
+2024-01,Other Specialty Retail,447548.0
+2024-02,Clothing & Accessories,99858.0
+2024-02,Electronics & Appliances,57861.0
+2024-02,Food & Beverage Stores,376133.0
+2024-02,General Merchandise,421956.0
+2024-02,Motor Vehicles & Parts,726434.0
+2024-02,Nonstore Retail (E-commerce),425281.0
+2024-02,Other Specialty Retail,449480.0
+2024-03,Clothing & Accessories,106677.0
+2024-03,Electronics & Appliances,57546.0
+2024-03,Food & Beverage Stores,394902.0
+2024-03,General Merchandise,446792.0
+2024-03,Motor Vehicles & Parts,772878.0
+2024-03,Nonstore Retail (E-commerce),446958.0
+2024-03,Other Specialty Retail,472098.0
+2024-04,Clothing & Accessories,105563.0
+2024-04,Electronics & Appliances,57006.0
+2024-04,Food & Beverage Stores,383263.0
+2024-04,General Merchandise,432317.0
+2024-04,Motor Vehicles & Parts,763070.0
+2024-04,Nonstore Retail (E-commerce),446670.0
+2024-04,Other Specialty Retail,484367.0
+2024-05,Clothing & Accessories,113822.0
+2024-05,Electronics & Appliances,60062.0
+2024-05,Food & Beverage Stores,402538.0
+2024-05,General Merchandise,453993.0
+2024-05,Motor Vehicles & Parts,790940.0
+2024-05,Nonstore Retail (E-commerce),457520.0
+2024-05,Other Specialty Retail,500580.0
+2024-06,Clothing & Accessories,108827.0
+2024-06,Electronics & Appliances,58303.0
+2024-06,Food & Beverage Stores,394579.0
+2024-06,General Merchandise,446178.0
+2024-06,Motor Vehicles & Parts,728350.0
+2024-06,Nonstore Retail (E-commerce),452306.0
+2024-06,Other Specialty Retail,485410.0
+2024-07,Clothing & Accessories,110125.0
+2024-07,Electronics & Appliances,60026.0
+2024-07,Food & Beverage Stores,402878.0
+2024-07,General Merchandise,447435.0
+2024-07,Motor Vehicles & Parts,776108.0
+2024-07,Nonstore Retail (E-commerce),464348.0
+2024-07,Other Specialty Retail,498455.0
+2024-08,Clothing & Accessories,113645.0
+2024-08,Electronics & Appliances,60367.0
+2024-08,Food & Beverage Stores,401929.0
+2024-08,General Merchandise,456589.0
+2024-08,Motor Vehicles & Parts,787274.0
+2024-08,Nonstore Retail (E-commerce),455576.0
+2024-08,Other Specialty Retail,499883.0
+2024-09,Clothing & Accessories,103576.0
+2024-09,Electronics & Appliances,57549.0
+2024-09,Food & Beverage Stores,392520.0
+2024-09,General Merchandise,438369.0
+2024-09,Motor Vehicles & Parts,732608.0
+2024-09,Nonstore Retail (E-commerce),455602.0
+2024-09,Other Specialty Retail,486061.0
+2024-10,Clothing & Accessories,109345.0
+2024-10,Electronics & Appliances,58970.0
+2024-10,Food & Beverage Stores,402989.0
+2024-10,General Merchandise,452479.0
+2024-10,Motor Vehicles & Parts,774958.0
+2024-10,Nonstore Retail (E-commerce),481258.0
+2024-10,Other Specialty Retail,504139.0
+2024-11,Clothing & Accessories,121372.0
+2024-11,Electronics & Appliances,65048.0
+2024-11,Food & Beverage Stores,405590.0
+2024-11,General Merchandise,466945.0
+2024-11,Motor Vehicles & Parts,773444.0
+2024-11,Nonstore Retail (E-commerce),504165.0
+2024-11,Other Specialty Retail,484405.0
+2024-12,Clothing & Accessories,143759.0
+2024-12,Electronics & Appliances,70111.0
+2024-12,Food & Beverage Stores,417627.0
+2024-12,General Merchandise,504374.0
+2024-12,Motor Vehicles & Parts,800812.0
+2024-12,Nonstore Retail (E-commerce),547570.0
+2024-12,Other Specialty Retail,494504.0

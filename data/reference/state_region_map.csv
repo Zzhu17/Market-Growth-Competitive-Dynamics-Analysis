@@ -1,0 +1,52 @@
+state_abbr,state_name,region,division,fips
+AL,Alabama,South,East South Central,01
+AK,Alaska,West,Pacific,02
+AZ,Arizona,West,Mountain,04
+AR,Arkansas,South,West South Central,05
+CA,California,West,Pacific,06
+CO,Colorado,West,Mountain,08
+CT,Connecticut,Northeast,New England,09
+DE,Delaware,South,South Atlantic,10
+DC,District of Columbia,South,South Atlantic,11
+FL,Florida,South,South Atlantic,12
+GA,Georgia,South,South Atlantic,13
+HI,Hawaii,West,Pacific,15
+ID,Idaho,West,Mountain,16
+IL,Illinois,Midwest,East North Central,17
+IN,Indiana,Midwest,East North Central,18
+IA,Iowa,Midwest,West North Central,19
+KS,Kansas,Midwest,West North Central,20
+KY,Kentucky,South,East South Central,21
+LA,Louisiana,South,West South Central,22
+ME,Maine,Northeast,New England,23
+MD,Maryland,South,South Atlantic,24
+MA,Massachusetts,Northeast,New England,25
+MI,Michigan,Midwest,East North Central,26
+MN,Minnesota,Midwest,West North Central,27
+MS,Mississippi,South,East South Central,28
+MO,Missouri,Midwest,West North Central,29
+MT,Montana,West,Mountain,30
+NE,Nebraska,Midwest,West North Central,31
+NV,Nevada,West,Mountain,32
+NH,New Hampshire,Northeast,New England,33
+NJ,New Jersey,Northeast,Middle Atlantic,34
+NM,New Mexico,West,Mountain,35
+NY,New York,Northeast,Middle Atlantic,36
+NC,North Carolina,South,South Atlantic,37
+ND,North Dakota,Midwest,West North Central,38
+OH,Ohio,Midwest,East North Central,39
+OK,Oklahoma,South,West South Central,40
+OR,Oregon,West,Pacific,41
+PA,Pennsylvania,Northeast,Middle Atlantic,42
+RI,Rhode Island,Northeast,New England,44
+SC,South Carolina,South,South Atlantic,45
+SD,South Dakota,Midwest,West North Central,46
+TN,Tennessee,South,East South Central,47
+TX,Texas,South,West South Central,48
+UT,Utah,West,Mountain,49
+VT,Vermont,Northeast,New England,50
+VA,Virginia,South,South Atlantic,51
+WA,Washington,West,Pacific,53
+WV,West Virginia,South,South Atlantic,54
+WI,Wisconsin,Midwest,East North Central,55
+WY,Wyoming,West,Mountain,56

@@ -1,0 +1,19 @@
+mtrs_national_sales:
+  name: Monthly Retail Trade Survey (MRTS)
+  source: U.S. Census Bureau
+  page_url: https://www.census.gov/retail/sales.html
+  files:
+    - https://www.census.gov/retail/mrts/www/mrtssales92-present.xlsx
+  granularity: monthly
+  geography: national
+  metric: sales_level
+
+msrs_state_growth:
+  name: Monthly State Retail Sales (MSRS)
+  source: U.S. Census Bureau
+  page_url: https://www.census.gov/retail/state_retail_sales.html
+  files:
+    - https://www.census.gov/retail/mrts/www/statedata/state_retail_yy.csv
+  granularity: monthly
+  geography: state
+  metric: yoy_percentage
