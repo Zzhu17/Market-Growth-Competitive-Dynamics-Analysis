@@ -56,7 +56,8 @@ bash scripts/run_pipeline.sh
 - `docs/figures/*.png`
 
 **Common issues**
-- **Network/URL errors:** update file URLs in `config/data_sources.yaml` and re-run `scripts/ingest_*.py`.\n- **Schema changes:** if Census updates column names/layout, update parsing logic in `scripts/transform_fact_tables.py` and re-run.
+- **Network/URL errors:** update file URLs in `config/data_sources.yaml` and re-run `scripts/ingest_*.py`.
+- **Schema changes:** if Census updates column names/layout, update parsing logic in `scripts/transform_fact_tables.py` and re-run.
 
 ## Business Context
 This project evaluates whether the US retail market is growing, where that growth originates, and how concentrated the market has become. The goal is to deliver decision-ready insights that mirror how internal Market/Strategy teams report market size, growth drivers, and concentration risk.
@@ -136,8 +137,6 @@ MSRS state data does not currently include NAICS 454 (Nonstore Retail), so state
 - YoY bar chart
 - Seasonality heatmap (Month × Year)
 
-**README narrative (market trend takeaway):**  
-The US retail market shows steady long-term growth with clear seasonality patterns, indicating a structurally stable but cyclical market.
 
 ## Growth Drivers
 This is the core value of the project — decomposing growth across three dimensions only (MSRS YoY %):
@@ -156,8 +155,6 @@ Which industries are pulling the market forward.
 - Map (state-level growth)
 - Top vs. Long Tail comparison
 
-**README narrative (growth driver takeaway):**  
-Growth is primarily driven by a small number of high-performing states, while long-tail regions contribute marginal but stable growth.
 
 ## Market Concentration & Risk
 **Focus (MSRS YoY %):**
@@ -171,19 +168,7 @@ Growth is primarily driven by a small number of high-performing states, while lo
 - Risk callout (text)
 - Industry share trend (MRTS, market structure)
 
-**README narrative (risk takeaway):**  
-Increasing concentration indicates potential systemic risk, where market performance becomes overly dependent on a limited number of regions.
-
-## Insights & Strategic Implications
-**Key Insights (2022-01 → 2024-12)**
-- **Market size:** Total retail sales reached **$2.98T** in **Dec 2024** (avg **$2.72T** over the last 12 months).
-- **Growth momentum:** **Dec 2024 YoY = 5.19%** (last 12-month avg **2.73%**); **MoM = 5.59%** (avg **0.53%**).
-- **Seasonality:** **December** is the peak month by average sales (**$2.84T**).
-- **Regional driver:** **South** contributed **34.0%** of positive YoY growth in **2024 H2** (all-industry).
-- **Concentration risk:** **Top 5 states** accounted for **28.0%** of positive growth in **Dec 2024**, down **8.2pp** vs **Dec 2023**.
-- **Industry momentum:** **Motor Vehicles & Parts** led 2024 with the highest average YoY growth (**2.92%**).
-
-**Strategic Implications**
+## Strategic Implications
 - **Where to invest:** Prioritize regions and states that consistently drive positive growth contribution.
 - **Where to monitor risk:** Track dependence on top states and leading industries as concentration changes.
 - **Market health:** Stable long-term growth with strong seasonality suggests a healthy but cyclical market; concentration trends determine resilience vs. vulnerability.
@@ -232,10 +217,11 @@ Increasing concentration indicates potential systemic risk, where market perform
 - `tests/` (pytest data quality checks)
 - `.github/workflows/ci.yml` (lightweight CI)
 
-**Tableau dashboards (exactly three)**
+**Tableau dashboards**
 - Market Overview
 - Growth Breakdown
 - Risk & Concentration
+- Industry Share Trend
   
 **Tableau data source**
 - Default: `data/published/marts_*.csv`
@@ -244,7 +230,6 @@ Increasing concentration indicates potential systemic risk, where market perform
 **Tableau workbook**
 - Expected file: `tableau/market_growth_competitive_dynamics.twbx`
 - Instructions: `tableau/README.md`
-- Tableau Public: TBD
 
 **Scope constraints**
 - No modeling
