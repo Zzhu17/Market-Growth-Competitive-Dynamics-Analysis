@@ -13,11 +13,50 @@
 ![Total Sales Trend](docs/figures/total_sales_trend.png)
 ![Growth YoY vs MoM](docs/figures/growth_yoy_mom.png)
 ![Top 5 Growth Share Trend](docs/figures/top5_growth_share_trend.png)
+![Industry Share Trend](docs/figures/industry_share_trend.png)
 
 ### Tableau Dashboards (Static Exports)
-![Market Overview](docs/figures/tableau_market_overview.png)
-![Growth Breakdown](docs/figures/tableau_growth_breakdown.png)
-![Risk & Concentration](docs/figures/tableau_risk_concentration.png)
+**Dashboard 1 — Market Overview (Market Size & Growth)**
+![Dashboard 1 - Market Overview](Dashboard1.png)
+- **Insight:** National sales peak in **Dec 2024 ($2.98T)** with clear year‑end seasonality; **YoY 5.19%** and **MoM 5.59%** highlight recent momentum.
+- **Explanation:** Tracks total sales, YoY, and MoM to show market size and cyclical patterns.
+
+**Dashboard 2 — Growth Breakdown (Where Growth Comes From)**
+![Dashboard 2 - Growth Breakdown](Dashboard2.png)
+- **Insight:** The **South** contributes the largest share of positive growth in **2024 H2 (34.0%)**; Top5 vs Rest shows concentration spikes in months when long‑tail growth is near zero.
+- **Explanation:** Region contribution + Top5 vs Long Tail + map explain growth drivers by region/state.
+
+**Dashboard 3 — Risk & Concentration (Growth Dependency)**
+![Dashboard 3 - Risk & Concentration](Dashboard3.png)
+- **Insight:** **Top 5 states = 28.0%** of positive growth in **Dec 2024**, down **8.2pp** vs Dec 2023, indicating reduced dependence on a few states.
+- **Explanation:** Combines state growth map, Top5 share trend, and latest‑month snapshot to monitor concentration risk.
+
+**Dashboard 4 — Industry Share Trend (Competitive Dynamics)**
+![Dashboard 4 - Industry Share Trend](Dashboard4.png)
+- **Insight:** Industry shares are broadly stable with modest shifts; **Motor Vehicles & Parts** leads 2024 YoY momentum, while **Nonstore Retail** shows late‑2024 uplift.
+- **Explanation:** Shows national industry mix over time (market structure change), complementing growth‑contribution analysis.
+
+## Quickstart (Runbook)
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+bash scripts/run_pipeline.sh
+```
+
+**Expected outputs (checklist):**
+- `data/processed/fact_national_retail_sales.parquet`
+- `data/processed/fact_state_retail_growth.parquet`
+- `data/marts/marts_market_trends.parquet`
+- `data/marts/marts_growth_contribution.parquet`
+- `data/published/marts_market_trends.csv`
+- `data/published/marts_growth_contribution.csv`
+- `docs/data_validation.md`
+- `docs/metrics_snapshot.csv`
+- `docs/figures/*.png`
+
+**Common issues**
+- **Network/URL errors:** update file URLs in `config/data_sources.yaml` and re-run `scripts/ingest_*.py`.\n- **Schema changes:** if Census updates column names/layout, update parsing logic in `scripts/transform_fact_tables.py` and re-run.
 
 ## Business Context
 This project evaluates whether the US retail market is growing, where that growth originates, and how concentrated the market has become. The goal is to deliver decision-ready insights that mirror how internal Market/Strategy teams report market size, growth drivers, and concentration risk.
@@ -130,6 +169,7 @@ Growth is primarily driven by a small number of high-performing states, while lo
 - Top N share trend line
 - Concentration snapshot
 - Risk callout (text)
+- Industry share trend (MRTS, market structure)
 
 **README narrative (risk takeaway):**  
 Increasing concentration indicates potential systemic risk, where market performance becomes overly dependent on a limited number of regions.
@@ -182,6 +222,16 @@ Increasing concentration indicates potential systemic risk, where market perform
 - `docs/metrics_snapshot.csv` (latest KPIs)
 - `docs/figures/*.png` (key visuals)
 
+**Documentation**
+- `docs/methodology_growth_contribution.md` (audit methodology + sensitivity check)
+- `docs/data_dictionary.md` (field definitions)
+- `docs/data_lineage.md` (pipeline lineage)
+
+**Quality checks**
+- `docs/data_validation.md` (coverage, uniqueness, missingness, range)
+- `tests/` (pytest data quality checks)
+- `.github/workflows/ci.yml` (lightweight CI)
+
 **Tableau dashboards (exactly three)**
 - Market Overview
 - Growth Breakdown
@@ -190,6 +240,11 @@ Increasing concentration indicates potential systemic risk, where market perform
 **Tableau data source**
 - Default: `data/published/marts_*.csv`
 - Backup: `sql/marts_*.sql`
+
+**Tableau workbook**
+- Expected file: `tableau/market_growth_competitive_dynamics.twbx`
+- Instructions: `tableau/README.md`
+- Tableau Public: TBD
 
 **Scope constraints**
 - No modeling

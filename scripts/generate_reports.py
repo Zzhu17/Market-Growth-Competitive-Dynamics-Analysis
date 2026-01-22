@@ -279,6 +279,23 @@ def _figures(mtrs: pd.DataFrame, msrs: pd.DataFrame) -> None:
     plt.savefig(FIG_DIR / "top5_growth_share_trend.png", dpi=150)
     plt.close()
 
+    # Figure 5: Industry share trend (national level)
+    shares = mtrs_dt.copy()
+    total_month = shares.groupby("date_dt", as_index=False)["sales_amount"].sum().rename(columns={"sales_amount": "total_sales"})
+    shares = shares.merge(total_month, on="date_dt", how="left")
+    shares["share_pct"] = shares["sales_amount"] / shares["total_sales"] * 100
+
+    plt.figure(figsize=(8, 4))
+    for industry, g in shares.groupby("industry"):
+        plt.plot(g["date_dt"], g["share_pct"], label=industry, linewidth=1.5)
+    plt.title("Industry Share of National Sales (MRTS)")
+    plt.xlabel("Date")
+    plt.ylabel("Share (%)")
+    plt.legend(loc="upper left", fontsize=7, ncol=2, frameon=False)
+    plt.tight_layout()
+    plt.savefig(FIG_DIR / "industry_share_trend.png", dpi=150)
+    plt.close()
+
 
 def main() -> int:
     mtrs, msrs = _load()

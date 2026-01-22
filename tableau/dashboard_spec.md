@@ -17,17 +17,27 @@
 - `industry`
 - `sales_amount`
 
+**Sheets (minimum set):**
+- Total Sales Trend
+- YoY Growth
+- MoM Growth
+- Seasonality Heatmap
+
 **Views:**
 1) **Total Sales (Line)**
    - X: `date`
    - Y: `SUM(sales_amount)`
    - Color: `industry` (or a fixed “Total” if desired)
 
-2) **YoY Growth (Bar)**
+2) **YoY Growth (Bar/Line)**
    - X: `date`
    - Y: YoY % of `sales_amount`
 
-3) **Seasonality Heatmap (Month × Year)**
+3) **MoM Growth (Bar/Line)**
+   - X: `date`
+   - Y: MoM % of `sales_amount`
+
+4) **Seasonality Heatmap (Month × Year)**
    - Rows: `MONTH(date)`
    - Columns: `YEAR(date)`
    - Color: `SUM(sales_amount)` or YoY %
@@ -53,6 +63,11 @@
 - `industry`
 - `yoy_pct`
 
+**Sheets (minimum set):**
+- Region Contribution
+- Top5 vs Long Tail
+- State Growth Map
+
 **Coverage note:**  
 MSRS does not publish NAICS 454 (Nonstore Retail), so state-level views may show 6 industry groups.
 
@@ -69,6 +84,8 @@ MSRS does not publish NAICS 454 (Nonstore Retail), so state-level views may show
 
 3) **Top vs Long Tail**
    - Compare Top 5 states vs Rest of US using contribution share
+   - **Important:** Do NOT filter on `SUM(State Contribution)`; it must sum to 1 each month.
+   - Industry filter should be **single-select** (All Industries or one industry).
 
 **Calculated fields (positive-only, confirmed):**
 - `Positive YoY % (MSRS)`  
@@ -90,16 +107,34 @@ MSRS does not publish NAICS 454 (Nonstore Retail), so state-level views may show
 - `industry`
 - `yoy_pct`
 
+**Sheets (minimum set):**
+- Top5 Share Trend
+- Concentration Snapshot
+- Industry Share Trend
+
 **Views:**
 1) **Top N Share Trend (Line)**
    - X: `date`
    - Y: `Top N Growth Share`
+   - **Important:** Do NOT filter on `SUM(State Contribution)`; it will distort shares.
+   - Industry filter should be **single-select** (All Industries or one industry).
 
 2) **Concentration Snapshot**
    - Bar or table: Top 5 / Top 10 states by growth share (latest month)
+   - Use a **latest month** filter to lock the snapshot.
 
 3) **Risk Callout (Text)**
    - Conditional text based on concentration trend direction
+
+4) **Industry Share Trend (Line, MRTS)**
+   - Data source: `marts_market_trends`
+   - X: `date`
+   - Y: `sales_amount / TOTAL(sales_amount)` by industry
+
+**Latest month filter (recommended):**
+- Calculated field `Is Latest`:
+  - `[Date (Month)] = { MAX([Date (Month)]) }`
+- Filter on `Is Latest = True` for snapshot views.
 
 **Calculated fields (positive-only, confirmed):**
 - `Top N Growth Share`  
