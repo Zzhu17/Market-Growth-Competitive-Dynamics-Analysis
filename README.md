@@ -1,11 +1,14 @@
 # Market Growth & Competitive Dynamics Analysis (US Retail Market)
 
 ## Executive Summary
-- National retail sales hit **$2.98T** in **Dec 2024**; average **$2.72T** over the last 12 months, with clear year-end seasonality.
-- **YoY growth = 5.19%** in Dec 2024 (12‑month avg **2.73%**); **MoM = 5.59%** (avg **0.53%**).
-- The **South** contributed **34.0%** of positive YoY growth in **2024 H2** (all‑industry).
-- **Top 5 states** accounted for **28.0%** of positive growth in **Dec 2024**, **down 8.2pp** vs Dec 2023.
-- **Motor Vehicles & Parts** led 2024 with the highest average YoY growth (**2.92%**).
+This project delivers a decision-ready market and growth analysis of the U.S. retail sector using official Census data.
+By combining national retail sales levels (MRTS) with state-level growth dynamics (MSRS), the analysis answers three core questions:
+
+- Is the U.S. retail market growing, and how stable is that growth?
+- Which regions, states, and industries are driving expansion?
+- Is growth becoming increasingly concentrated, introducing structural risk?
+
+The pipeline is fully reproducible, validated, and produces analysis-ready marts and executive dashboards suitable for Market, Growth, and Strategy teams.
 
 ## Key Outputs (Quick Review)
 - Metrics snapshot: `docs/metrics_snapshot.csv`
@@ -36,23 +39,25 @@
 - **Insight:** Industry shares are broadly stable with modest shifts; **Motor Vehicles & Parts** leads 2024 YoY momentum, while **Nonstore Retail** shows late‑2024 uplift.
 - **Explanation:** Shows national industry mix over time (market structure change), complementing growth‑contribution analysis.
 
-## Quickstart (Runbook)
+## Quickstart (Reproducibility)
+To reproduce the full pipeline end-to-end:
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+
 bash scripts/run_pipeline.sh
 ```
 
-**Expected outputs (checklist):**
+**Expected Outputs**
 - `data/processed/fact_national_retail_sales.parquet`
 - `data/processed/fact_state_retail_growth.parquet`
+- `data/published/fact_national_retail_sales.csv`
+- `data/published/fact_state_retail_growth.csv`
 - `data/marts/marts_market_trends.parquet`
 - `data/marts/marts_growth_contribution.parquet`
-- `data/published/marts_market_trends.csv`
-- `data/published/marts_growth_contribution.csv`
-- `docs/data_validation.md`
 - `docs/metrics_snapshot.csv`
+- `docs/data_validation.md`
 - `docs/figures/*.png`
 
 **Common issues**
@@ -110,6 +115,15 @@ Official source URLs are locked in `config/data_sources.yaml` for reproducibilit
 **Coverage note:**  
 MSRS state data does not currently include NAICS 454 (Nonstore Retail), so state-level outputs may show 6 groups.
 
+## Data Constraints & Design Decisions
+Due to official data publication constraints, no single dataset provides both monthly sales levels and state-level industry detail.
+To reflect real-world analytical practice, this project intentionally separates:
+
+- **Market size and trend (levels):** National Monthly Retail Trade Survey (MRTS)
+- **Growth structure and concentration (rates):** Monthly State Retail Sales (MSRS, YoY %)
+
+These datasets are not merged at the row level. Instead, they are analyzed in parallel to preserve data integrity and interpretability.
+
 ## Key Metrics
 **Market Size & Growth**
 - Total Sales
@@ -125,6 +139,19 @@ MSRS state data does not currently include NAICS 454 (Nonstore Retail), so state
 - Top 5 / Top 10 states share
 - Top industry share
 - Growth dependency ratio
+
+## Growth Contribution Methodology
+Growth contribution is calculated using positive-only year-over-year (YoY) growth normalization:
+
+- Negative YoY values are floored at zero.
+- Contributions are normalized by the sum of all positive YoY values within the same period (and industry where applicable).
+
+This approach ensures that:
+- Contributions represent sources of expansion, not contraction.
+- Results remain interpretable even when aggregate growth is near zero.
+
+**Limitation:**  
+This method emphasizes growth drivers and may understate the impact of declining regions or industries. A signed-normalization alternative is discussed in `docs/methodology_growth_contribution.md`.
 
 ## Market Trends
 **What is analyzed (SQL / pandas, MRTS):**
@@ -168,10 +195,32 @@ Which industries are pulling the market forward.
 - Risk callout (text)
 - Industry share trend (MRTS, market structure)
 
+## Competitive Dynamics Interpretation
+In this project, competitive dynamics are assessed through changes in growth concentration and industry mix, rather than firm-level competition.
+
+Key lenses include:
+- **Top-N state growth concentration:** Are fewer states accounting for a larger share of total growth?
+- **Industry contribution shifts:** Which retail categories consistently lead or lag market expansion?
+- **Stability vs. volatility:** Are growth drivers persistent or episodic?
+
+This framing mirrors how strategy teams evaluate structural competitiveness when firm-level data is unavailable.
+
 ## Strategic Implications
 - **Where to invest:** Prioritize regions and states that consistently drive positive growth contribution.
 - **Where to monitor risk:** Track dependence on top states and leading industries as concentration changes.
 - **Market health:** Stable long-term growth with strong seasonality suggests a healthy but cyclical market; concentration trends determine resilience vs. vulnerability.
+
+## Data Governance & Validation
+This project includes a dedicated data validation layer to ensure analytical integrity:
+
+- Coverage completeness (36/36 months)
+- Primary key uniqueness (0 duplicates)
+- Missing value monitoring
+- Value range checks for YoY growth
+- Industry classification consistency
+- State-to-region mapping completeness
+
+Detailed results are documented in `docs/data_validation.md`.
 
 ## Technical Implementation
 **SQL (core logic)**
@@ -217,20 +266,6 @@ Which industries are pulling the market forward.
 - `tests/` (pytest data quality checks)
 - `.github/workflows/ci.yml` (lightweight CI)
 
-**Tableau dashboards**
-- Market Overview
-- Growth Breakdown
-- Risk & Concentration
-- Industry Share Trend
-  
-**Tableau data source**
-- Default: `data/published/marts_*.csv`
-- Backup: `sql/marts_*.sql`
-
-**Tableau workbook**
-- Expected file: `tableau/market_growth_competitive_dynamics.twbx`
-- Instructions: `tableau/README.md`
-
 **Scope constraints**
 - No modeling
 - No forecasting
@@ -238,3 +273,24 @@ Which industries are pulling the market forward.
 
 ## Intended Use Case
 This analysis is designed to support market sizing, regional investment prioritization, and concentration risk monitoring for strategy and growth planning teams.
+
+## Tableau Dashboards
+Interactive dashboards are built directly on the analytics marts or published CSV outputs.
+
+To connect Tableau:
+- Primary source: `data/published/*.csv`
+- Alternative: SQL marts in `sql/`
+
+Dashboard specifications are documented in `tableau/dashboard_spec.md`.
+Static preview images are available in `docs/figures/`.
+
+**Tableau workbook**
+- Expected file: `tableau/market_growth_competitive_dynamics.twbx`
+- Instructions: `tableau/README.md`
+
+## Limitations
+- State-level analysis relies on growth rates (YoY %) rather than sales levels due to data availability.
+- Industry coverage differs slightly between MRTS (7 groups) and MSRS (6 groups).
+- Concentration metrics reflect growth dependency, not absolute market share.
+
+These constraints reflect real-world public data limitations and are explicitly incorporated into the analysis design.
